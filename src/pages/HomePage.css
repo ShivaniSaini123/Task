@@ -1,0 +1,108 @@
+.home-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap to the next line on smaller screens */
+    justify-content: center; /* Centers the sections on smaller screens */
+    align-items: center;
+    height: auto; /* Allows the height to adjust based on content */
+    padding: 5px;
+    background-color: #f8f9fa;
+    gap: 10px; /* Slightly increased for better spacing on smaller screens */
+  }
+  
+  .section {
+    width: 300px;
+    height: 350px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+    /* Gradient section */
+  .gradient {
+    background: linear-gradient(135.38deg, #3300FF 0%, #FA00FF 98.32%);
+    /* background: linear-gradient(45deg, rgb(141, 10, 141), pink); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  /* Logo section */
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    overflow: hidden;
+    border: 2px solid #e0e0e0; /* Adds a subtle border */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+  }
+  
+  .logo img {
+    width: 80%; /* Ensures the logo scales within the section */
+    height: auto;
+    object-fit: contain; /* Keeps the aspect ratio */
+  }
+    /* Grid section */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adapts to available space */
+    gap: 10px;
+    background: #ffffff;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .grid-item {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    background: #007bff;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .grid-item:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .section {
+      width: 250px; /* Reduce section width on smaller screens */
+      height: 300px;
+    }
+  
+    .grid {
+      grid-template-columns: repeat(2, 1fr); /* Adjust grid to 2 columns on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section {
+      width: 100%; /* Make sections take full width on very small screens */
+      height: auto; /* Adjust height automatically */
+    }
+  
+    .grid {
+      grid-template-columns: 1fr; /* Single column grid on extra-small screens */
+    }
+  
+    .grid-item {
+      width: 100%; /* Make grid items stretch to fill the container */
+      height: 60px; /* Adjust height for better spacing */
+    }
+  }
+  
